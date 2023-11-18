@@ -51,6 +51,11 @@ const move = (e) => {
   cursorY = !isTouchDevice() ? e.clientY : e.touches[0].clientY;
   cursor.style.left = `${cursorX}px`;
   cursor.style.top = `${cursorY}px`;
+  
+  if (isTouchDevice()) {
+    cursor.style.zIndex = "9999";
+    cursor.style.display = "block";
+  }
 };
 
 document.addEventListener('mouseenter', (e) => {
@@ -59,7 +64,9 @@ document.addEventListener('mouseenter', (e) => {
 });
 
 document.addEventListener('mouseleave', () => {
-  cursor.style.zIndex = "0";
+  if (isTouchDevice()) {
+    cursor.style.display = "none";
+  }
 });
 
 document.addEventListener('mousemove', (e) => {
@@ -70,11 +77,12 @@ document.addEventListener('touchmove', (e) => {
   move(e);
 });
 
-document.addEventListener('touchend', (e) => {
-  e.preventDefault();
+document.addEventListener('touchend', () => {
+  cursor.style.display = "none";
 });
 
 document.addEventListener('touchstart', (e) => {
+  cursor.style.display = "none"; // Hide the cursor on touchstart
   const scrollX = e.touches[0].pageX;
   const scrollY = e.touches[0].pageY;
   move({ clientX: scrollX, clientY: scrollY });
