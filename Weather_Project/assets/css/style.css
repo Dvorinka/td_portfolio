@@ -1,61 +1,31 @@
-/*-----------------------------------*\
-  #style.css
-\*-----------------------------------*/
-
-/**
- * copyright 2023 codewithsadee
- */
-
-
-
-
-
-/*-----------------------------------*\
-  #CUSTOM PROPERTY
-\*-----------------------------------*/
 
 :root {
-
-  /**
-   * COLOR
-   */
-
-  --primary: #B5A1E5; 
+  --primary: rgb(74, 171, 235);
   --on-primary: #100E17; 
   --background: #131214;
-  --on-background: #EAE6F2;
+  --on-background: #ffffff;
   --surface: #1D1C1F;
-  --on-surface: #DDDAE5;
+  --on-surface: #ffffff;
   --on-surface-variant: #7B7980; 
   --on-surface-variant-2: #B9B6BF;
-  --outline: #3E3D40;
+  --outline: #ffffff;
   --bg-aqi-1: #89E589;
   --on-bg-aqi-1: #1F331F;
   --bg-aqi-2: #E5DD89;
-  --on-bg-aqi-2: #33311F;
+  --on-bg-aqi-2: #000000;
   --bg-aqi-3: #E5C089;
-  --on-bg-aqi-3: #332B1F;
-  --bg-aqi-4: #E58989;
-  --on-bg-aqi-4: #331F1F;
-  --bg-aqi-5: #E589B7;
-  --on-bg-aqi-5: #331F29;
+  --on-bg-aqi-3: #000000;
+  --bg-aqi-4: #000000;
+  --on-bg-aqi-4: #000000;
+  --bg-aqi-5: #cce589;
+  --on-bg-aqi-5: #000000;
   --white: hsl(0, 0%, 100%);
   --white-alpha-4: hsla(0, 0%, 100%, 0.04);
   --white-alpha-8: hsla(0, 0%, 100%, 0.08);
   --black-alpha-10: hsla(0, 0%, 0%, 0.1);
-
-  /* gradient colors */
   --gradient-1: linear-gradient(180deg, hsla(270, 5%, 7%, 0) 0%, hsla(270, 5%, 7%, 0.8) 65%, hsl(270, 5%, 7%) 100%);
   --gradient-2: linear-gradient(180deg, hsla(260, 5%, 12%, 0) 0%, hsla(260, 5%, 12%, 0.8) 65%, hsl(260, 5%, 12%) 100%);
-
-  /**
-   * TYPOGRAPHY
-   */
-
-  /* font family */
   --ff-nunito-sans: 'Nunito Sans', sans-serif;
-
-  /* font size */
   --heading: 5.6rem;
   --title-1: 2rem;
   --title-2: 1.8rem;
@@ -65,43 +35,16 @@
   --body-3: 1.6rem;
   --label-1: 1.4rem;
   --label-2: 1.2rem;
-
-  /* font weight */
   --weight-regular: 400;
   --weight-semiBold: 600;
-
-  /**
-   * BOX SHADOW
-   */
-
   --shadow-1: 0px 1px 3px hsla(0, 0%, 0%, 0.5);
   --shadow-2: 0px 3px 6px hsla(0, 0%, 0%, 0.4);
-
-  /**
-   * BORDER RADIUS
-   */
-
   --radius-28: 28px;
   --radius-16: 16px;
   --radius-pill: 500px;
   --radius-circle: 50%;
-
-  /**
-   * TRANSITION
-   */
-
   --transition-short: 100ms ease;
-
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #RESET
-\*-----------------------------------*/
-
 *,
 *::before,
 *::after {
@@ -165,21 +108,13 @@ body {
 
 ::-webkit-scrollbar {
   width: 6px;
-  height: 6px; /* for horizontal scrollbar */
+  height: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--white-alpha-8);
   border-radius: var(--radius-pill);
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #MATERIAL ICON
-\*-----------------------------------*/
 
 @font-face {
   font-family: 'Material Symbols Rounded';
@@ -206,14 +141,6 @@ body {
   width: 1em;
   overflow: hidden;
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #REUSED STYLE
-\*-----------------------------------*/
 
 .container {
   max-width: 1600px;
@@ -334,14 +261,6 @@ body {
   100% { opacity: 1; }
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #HEADER
-\*-----------------------------------*/
-
 .header .btn-primary .span { display: none; }
 
 .logo img { width: 150px; }
@@ -454,17 +373,9 @@ body {
   box-shadow: none;
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #MAIN
-\*-----------------------------------*/
-
 main {
   height: calc(100vh - 80px);
-  height: calc(100svh - 80px); /* for mobile browser */
+  height: calc(100svh - 80px);
   overflow: hidden;
 }
 
@@ -474,7 +385,7 @@ article.container {
   grid-template-columns: minmax(0, 1fr);
   gap: 20px;
   height: 100%;
-  overflow-y: auto; /* for firefox */
+  overflow-y: auto;
   overflow-y: overlay;
 }
 
@@ -499,14 +410,6 @@ article.container::before {
 }
 
 .section:not(:last-child) { margin-block-end: 16px; }
-
-
-
-
-
-/*-----------------------------------*\
-  #CURRENT WEATHER
-\*-----------------------------------*/
 
 .current-weather-card .weapper {
   margin-block: 12px;
@@ -538,13 +441,6 @@ article.container::before {
 .current-weather-card .meta-text { color: var(--on-surface-variant); }
 
 
-
-
-
-/*-----------------------------------*\
-  #HIGHLIGHTS
-\*-----------------------------------*/
-
 .forecast-card .title-2 { margin-block-end: 0; }
 
 .forecast-card :is(.card-item, .icon-wrapper) {
@@ -565,14 +461,6 @@ article.container::before {
   width: 100%;
   text-align: right;
 }
-
-
-
-
-
-/*-----------------------------------*\
-  #HOURLY FORECAST
-\*-----------------------------------*/
 
 .highlights .m-icon { font-size: 3.2rem; }
 
@@ -658,14 +546,6 @@ article.container::before {
 
 .highlight-card.two .label-1 { margin-block-end: 4px; }
 
-
-
-
-
-/*-----------------------------------*\
-  #FORECAST
-\*-----------------------------------*/
-
 .slider-container {
   overflow-x: auto;
   margin-inline: -16px;
@@ -698,14 +578,6 @@ article.container::before {
   margin-block: 12px;
 }
 
-
-
-
-
-/*-----------------------------------*\
-  #FOOTER
-\*-----------------------------------*/
-
 .footer,
 .footer .body-3:last-child {
   display: flex;
@@ -725,14 +597,6 @@ article.container::before {
 .fade-in .footer { display: flex; }
 
 .footer .body-3:last-child { gap: 6px; }
-
-
-
-
-
-/*-----------------------------------*\
-  #LOADING
-\*-----------------------------------*/
 
 .loading {
   position: absolute;
@@ -757,20 +621,13 @@ article.container::before {
 }
 
 
-
-
-
-/*-----------------------------------*\
-  #ERROR SECTION
-\*-----------------------------------*/
-
 .error-content {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
-  height: 100svh; /* for mobile browser */
+  height: 100svh;
   background-color: var(--background);
   flex-direction: column;
   justify-content: center;
@@ -782,22 +639,7 @@ article.container::before {
 .error-content .btn-primary { margin-block-start: 20px; }
 
 
-
-
-
-/*-----------------------------------*\
-  #MEDIA QUERIES
-\*-----------------------------------*/
-
-/**
- * responsive for large than 768px screen
- */
-
 @media (min-width: 768px) {
-
-  /**
-   * REUSED STYLE
-   */
 
   .container { padding: 24px; }
 
@@ -819,11 +661,6 @@ article.container::before {
   }
 
 
-
-  /**
-   * HEADER
-   */
-
   .header-actions { gap: 24px; }
 
   .header .btn-primary { padding-inline: 16px 24px; }
@@ -831,12 +668,6 @@ article.container::before {
   .header .btn-primary .span { display: block; }
 
   .search-view { clip-path: circle(3% at calc(100% - 273px) 6%); }
-
-
-
-  /**
-   * MAIN
-   */
 
   main {
     height: calc(100vh - 96px);
@@ -893,48 +724,19 @@ article.container::before {
 }
 
 
-
-
-
-/**
- * responsive for large than 1200px screen
- */
-
 @media (min-width: 1200px) {
 
-  /**
-   * CUSTOM PROPERTY
-   */
-
   :root {
-
-    /* font size */
     --heading: 8rem;
     --title-2: 2rem;
-
   }
 
-
-
-  /**
-   * REUSED STYLE
-   */
-
   .container { padding: 40px; }
-
   .card-lg { padding: 36px; }
-
   .card-sm { padding: 24px; }
-
   .title-1 { --title-1: 3.6rem; }
-
   .highlight-card.two .card-item { column-gap: 24px; }
 
-
-
-  /**
-   * HEADER
-   */
 
   .header .icon-btn { display: none; }
 
@@ -1006,12 +808,6 @@ article.container::before {
     filter: drop-shadow(var(--shadow-2));
   }
 
-
-
-  /**
-   * MAIN
-   */
-
   main {
     height: calc(100vh - 120px);
     height: calc(100svh - 120px);
@@ -1035,14 +831,6 @@ article.container::before {
   .slider-list { gap: 16px; }
 
 }
-
-
-
-
-
-/**
- * responsive for large than 1400px screen
- */
 
 @media (min-width: 1400px) {
 

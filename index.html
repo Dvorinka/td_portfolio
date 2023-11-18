@@ -17,14 +17,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div id="cursor"></div>
   <header class="topbar">
     <a href="https://tdvorak.site/" class="logo">
       <img src="images/Logo_dark.png" alt="Tomáš Dvořák" width="145" height="32" class="dark">
     </a>
     <button class="icon-btn theme-btn" data-theme-btn>
-      <span class="material-symbols-outlined dark" aria-hidden="true"> dark_mode </span>
       <div class="state-layer"></div>
     </button>
+    
   </header>
   <main>
     <article>
@@ -54,14 +55,15 @@
         <div class="about-card">
           <h2 class="card-title title-medium">About</h2>
           <p class="body-medium card-text">
-            I do <b>2D design</b> with programs like<br>
-            <b><u><a href="https://www.adobe.com/products/photoshop.html" target="_blank" alt="photoshop">Photoshop</a></u></b> and 
-            <b><u><a href="https://www.adobe.com/products/photoshop-lightroom/mobile.html" target="_blank" alt="lightroom">Lightroom</a></b></u>.<br>
-            I am also interested in <b>3D design</b> using programs like <b><u><a href="https://www.unrealengine.com/en-US/unreal-engine-5" target="_blank" alt="unreal engine 5">Unreal Engine 5</a></u></b> and 
-            <b><u><a href="https://www.blender.org/" target="_blank" alt="blender">Blender</a></b></u>.<br>
-            I also do <b>Programming (<u><a href="https://code.visualstudio.com/" target="_blank" alt="vs code">VS Code</a></u>)</b>,<br>
-            <b>Pentesting (<u><a href="https://www.kali.org/" target="_blank" alt="kali linux">Kali Linux</a></u>)</b>, <b>Psychology</b>,<br>
-            <b>Video Editing (<u><a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" alt="davinci resolve">Davinci Resolve</a></u>)</b>, <b>Photography</b> and I am also a private <b>English teacher.</b>
+            I do 2D design with programs like<br>
+            <b><a href="https://www.adobe.com/products/photoshop.html" target="_blank" alt="photoshop">Photoshop</a></b> and 
+            <b><a href="https://www.adobe.com/products/photoshop-lightroom/mobile.html" target="_blank" alt="lightroom">Lightroom</a></b>.<br>
+            I am also interested in 3D design using programs like <b><a href="https://www.unrealengine.com/en-US/unreal-engine-5" target="_blank" alt="unreal engine 5">Unreal Engine 5</a></b> and 
+            <b><a href="https://www.blender.org/" target="_blank" alt="blender">Blender</a></b>.<br>
+            I also do Programming (<b><a href="https://code.visualstudio.com/" target="_blank" alt="vs code">VS Code</a></u></b>),<br>
+            Pentesting (<b><a href="https://www.kali.org/" target="_blank" alt="kali linux">Kali Linux</a></b>), <b>Psychology</b>,<br>
+            Video Editing (<b><a href="https://www.blackmagicdesign.com/products/davinciresolve" target="_blank" alt="davinci resolve">Davinci Resolve</a></b>), 
+            <b><a href="https://dv0rinka.site" target="_blank">Photography</a></b> and I am also a private English teacher.
         </p>
         
         <style>
@@ -73,11 +75,11 @@
           <ul class="about-list">
             <li class="list-item">
               <span class="material-symbols-outlined" aria-hidden="true"> location_on </span>
-              <a href="https://en.wikipedia.org/wiki/Czech_Republic" target="_blank" class="label-medium"><u>Czech Republic</u></a>
+              <a href="https://en.wikipedia.org/wiki/Czech_Republic" target="_blank" class="label-medium">Czech Republic</a>
             </li>
             <li class="list-item">
               <span class="material-symbols-outlined" aria-hidden="true"> work </span>
-              <span class="label-medium">Student</span>
+              <a href="https://oauh.cz" target="_blank" class="label-medium">Student</a>
             </li>
             <li class="list-item">
               <span class="label-medium">Support Me ⮧</span>
@@ -115,76 +117,80 @@
               <div class="project-list">
                 <div class="card">
                   <figure class="card-banner img-holder" style="--width: 334; --height: 180;">
-                    <img src="#" alt="Pixstock - Stock Media App" width="334" height="180"
-                      class="img-cover">
+                    <!--<img src="#" alt="" width="334" height="180"
+                      class="img-cover">-->
                   </figure>
                   <div class="card-content">
-                    <span class="label-large card-subtitle">Web App</span>
-                    <h3 class="title-large card-title">Weather Project</h3>
+                    <span class="label-large card-subtitle">API Website Project</span>
+                    <h3 class="title-large card-title">Weather App</h3>
                   </div>
-                  <a href="Weather_Project\weather.html" target="_blank" class="state-layer"></a>
+                  <a href="Weather_Project\Weather.html" target="_blank" class="state-layer"></a>
+                </div>
+
+                <div class="card">
+                  <figure class="card-banner img-holder" style="--width: 334; --height: 180;">
+                    <!--<img src="#" alt="" width="334" height="180"
+                      class="img-cover">-->
+                  </figure>
+                  <div class="card-content">
+                    <span class="label-large card-subtitle">API Website Project</span>
+                    <h3 class="title-large card-title">TradingView Charts</h3>
+                  </div>
+                  <a href="Tradingview_Project\Tradingview.html" target="_blank" class="state-layer"></a>
+                </div>
+
+                <div class="card">
+                  <figure class="card-banner img-holder" style="--width: 334; --height: 180;">
+                    <!--<img src="#" alt="#" width="334"
+                      height="180" class="img-cover">-->
+                  </figure>
+                  <div class="card-content">
+                    <span class="label-large card-subtitle">Portfolio Website</span>
+                    <h3 class="title-large card-title">Client’s Portfolio</h3>
+                  </div>
+                  <a href="https://bcdvorinka.github.io/ap_portfolio/" target="_blank" class="state-layer"></a>
+                </div>
+
+                <div class="card">
+                  <figure class="card-banner img-holder" style="--width: 334; --height: 180;">
+                    <!--<img src="#" alt="#" width="334" height="180"
+                      class="img-cover">-->
+                  </figure>
+                  <div class="card-content">
+                    <span class="label-large card-subtitle">Portfolio Website</span>
+                    <h3 class="title-large card-title">My Photography Portfolio</h3>
+                  </div>
+                  <a href="https://dv0rinka.site" target="_blank" class="state-layer"></a>
                 </div>
                 <div class="card">
                   <figure class="card-banner img-holder" style="--width: 334; --height: 180;">
-                    <img src="#" alt="Cook.io - Recipe App" width="334" height="180"
-                      class="img-cover">
+                    <!--<img src="#" alt="#" width="334" height="180"
+                      class="img-cover">-->
                   </figure>
                   <div class="card-content">
-                    <span class="label-large card-subtitle">Web App</span>
-                    <h3 class="title-large card-title">TradingView Project</h3>
+                    <span class="label-large card-subtitle">Github Project</span>
+                    <h3 class="title-large card-title">Raspberry Pi Projects</h3>
                   </div>
-                  <a href="Tradingview_Project\tradingview.html" target="_blank" class="state-layer"></a>
+                  <a href="#" target="_blank" class="state-layer"></a>
                 </div>
                 <div class="card">
                   <figure class="card-banner img-holder" style="--width: 334; --height: 180;">
-                    <img src="images/project-3.png" alt="GitFinder - Github User Finder" width="334"
-                      height="180" class="img-cover">
+                    <!--<img src="images/earth.png" alt="#" width="334" height="180"
+                      class="img-cover">-->
                   </figure>
                   <div class="card-content">
-                    <span class="label-large card-subtitle">Web App</span>
-                    <h3 class="title-large card-title">GitFinder - Github User Finder</h3>
+                    <span class="label-large card-subtitle">Blender Model</span>
+                    <h3 class="title-large card-title">3D Realistic Earth Model</h3>
                   </div>
-                  <a href="#" class="state-layer"></a>
-                </div>
-                <div class="card">
-                  <figure class="card-banner img-holder" style="--width: 334; --height: 180;">
-                    <img src="images/project-4.png" alt="Weatherio - Live Weather App" width="334" height="180"
-                      class="img-cover">
-                  </figure>
-                  <div class="card-content">
-                    <span class="label-large card-subtitle">Web App</span>
-                    <h3 class="title-large card-title">Weatherio - Live Weather App</h3>
-                  </div>
-                  <a href="#" class="state-layer"></a>
-                </div>
-                <div class="card">
-                  <figure class="card-banner img-holder" style="--width: 334; --height: 180;">
-                    <img src="images/project-5.png" alt="Tvflix - Netflix Clone 2.0" width="334" height="180"
-                      class="img-cover">
-                  </figure>
-                  <div class="card-content">
-                    <span class="label-large card-subtitle">Web App</span>
-                    <h3 class="title-large card-title">Tvflix - Netflix Clone 2.0</h3>
-                  </div>
-                  <a href="#" class="state-layer"></a>
-                </div>
-                <div class="card">
-                  <figure class="card-banner img-holder" style="--width: 334; --height: 180;">
-                    <img src="images/project-6.png" alt="Travelia - Travel Website" width="334" height="180"
-                      class="img-cover">
-                  </figure>
-                  <div class="card-content">
-                    <span class="label-large card-subtitle">Website</span>
-                    <h3 class="title-large card-title">Travelia - Travel Website</h3>
-                  </div>
-                  <a href="#" class="state-layer"></a>
+                  <a href="https://github.com/BcDvorinka/earth3D/" target="_blank" class="state-layer"></a>
                 </div>
               </div>
             </div>
           </section>
+
           <section class="section tab-content resume-tab" data-tab-content="resume">
             <div class="container">
-              <h2 class="section-title title-small">Experience</h2>
+              <!--<h2 class="section-title title-small">Experience</h2>
               <ul class="list">
                 <li class="resume-item">
                   <div class="resume-card">
@@ -203,34 +209,91 @@
                     </span>
                   </div>
                 </li>
-              </ul>
+              </ul>-->
               <h2 class="section-title title-small">Education</h2>
               <ul class="list">
                 <li class="resume-item">
                   <div class="resume-card">
                     <p class="body-large">
-                      Certification in Web Development with React.js (FreeCodeCamp Certification)
+                      Certification in Responsive Web Design<br>
+                      <b><a href="#">(freeCodeCamp Certification)</b></a>
                     </p>
-                    <span class="label-medium card-subtitle">2015 - 2016</span>
+                    <span class="label-medium card-subtitle">2022-2023</span>
                   </div>
                 </li>
+
                 <li class="resume-item">
                   <div class="resume-card">
                     <p class="body-large">
-                      Relevant Coursework: Data Structures, Algorithms, Database Management
+                      JavaScript Algorithms and Data Structures<br>
+                      <b><a href="#">(freeCodeCamp Certification)</b></a>
                     </p>
-                    <span class="label-medium card-subtitle">2014 - 2013</span>
+                    <span class="label-medium card-subtitle">2023</span>
                   </div>
                 </li>
+
                 <li class="resume-item">
                   <div class="resume-card">
                     <p class="body-large">
-                      Bachelor of Science in Computer Science, Alexandria University
+                      Ethical Hacking Bootcamp<br>
+                      <b><a href="#">(ZTM/Udemy Certification)</b></a>
                     </p>
-                    <span class="label-medium card-subtitle">2010 - 2014</span>
+                    <span class="label-medium card-subtitle">2023</span>
+                  </div>
+                </li>
+
+                <li class="resume-item">
+                  <div class="resume-card">
+                    <p class="body-large">
+                      Web Developer Bootcamp<br>
+                      <b><a href="#">(ZTM/Udemy Certification)</b></a>
+                    </p>
+                    <span class="label-medium card-subtitle">2023</span>
+                  </div>
+                </li>
+
+                <li class="resume-item">
+                  <div class="resume-card">
+                    <p class="body-large">
+                      Web Security & Bug Bounty<br>
+                      <b><a href="#">(ZTM/Udemy Certification)</b></a>
+                    </p>
+                    <span class="label-medium card-subtitle">2023</span>
                   </div>
                 </li>
               </ul>
+
+              <li class="resume-item">
+                <div class="resume-card">
+                  <p class="body-large">
+                    Python & Ethical Hacking Bootcamp<br>
+                    <b><a href="#">(Udemy Certification)</b></a>
+                  </p>
+                  <span class="label-medium card-subtitle">2023</span>
+                </div>
+              </li>
+
+              <li class="resume-item">
+                <div class="resume-card">
+                  <p class="body-large">
+                    Freelancing Bootcamp<br>
+                    <b><a href="#">(ZTM/Udemy Certification)</b></a>
+                  </p>
+                  <span class="label-medium card-subtitle">2023</span>
+                </div>
+              </li>
+
+              <li class="resume-item">
+                <div class="resume-card">
+                  <p class="body-large">
+                    Cyber Security Course 1-4<br>
+                    <b><a href="#">(Nathan House/Udemy Certification)</b></a>
+                  </p>
+                  <span class="label-medium card-subtitle">2023</span>
+                </div>
+              </li>
+
+            </ul>
               <h2 class="section-title title-small">Skills and Technologies</h2>
               <ul class="resume-bottom-list">
                 <li class="resume-bottom-item">
@@ -360,7 +423,7 @@
   </main>
   <footer class="footer">
     <div class="container">
-      <p class="body-medium">Copyright 2023. All right reserved by Tomáš Dvořák.</p>
+      <p class="body-medium">Copyright 2023. All right reserved by <b><a href="https://tdvorak.site">Tomáš Dvořák.</a></b></p>
     </div>
   </footer>
   <script src="script.js"></script>
