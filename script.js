@@ -75,6 +75,7 @@ document.addEventListener('mousemove', (e) => {
 
 document.addEventListener('touchmove', (e) => {
   move(e);
+  cursor.style.display = "none";
 });
 
 document.addEventListener('touchend', () => {
