@@ -47,15 +47,19 @@ const isTouchDevice = () => {
 };
 
 const move = (e) => {
-  cursorX = !isTouchDevice() ? e.clientX : e.touches[0].clientX;
-  cursorY = !isTouchDevice() ? e.clientY : e.touches[0].clientY;
-  cursor.style.left = `${cursorX}px`;
-  cursor.style.top = `${cursorY}px`;
-  
-  if (isTouchDevice()) {
-    cursor.style.zIndex = "9999";
-    cursor.style.display = "block";
+  if (!isTouchDevice()) {
+    cursorX = e.clientX;
+    cursorY = e.clientY;
+    cursor.style.left = `${cursorX}px`;
+    cursor.style.top = `${cursorY}px`;
+  } else {
+    // Disable custom cursor on touch devices
+    cursor.style.display = "none";
+    return;
   }
+  
+  cursor.style.zIndex = "9999";
+  cursor.style.display = "block";
 };
 
 document.addEventListener('mouseenter', (e) => {
