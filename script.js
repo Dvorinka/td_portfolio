@@ -106,3 +106,26 @@ document.addEventListener('scroll', (e) => {
   const scrollY = e.pageY;
   move({ clientX: scrollX, clientY: scrollY });
 });
+
+function sendEmail() {
+  emailjs.send('service_j9prncb', 'template_drg2vil', {
+    name: document.getElementById('name').value,
+    email: document.getElementById('email').value,
+    subject: document.getElementById('subject').value,
+    message: document.getElementById('message').value
+  })
+  .then(function(response) {
+    console.log('SUCCESS!', response.status, response.text);
+  }, function(error) {
+    console.log('FAILED...', error);
+  });
+}
+
+const form = document.getElementById('myForm');
+  const sendBtn = document.querySelector('.send-btn');
+  const requiredInputs = form.querySelectorAll('input[required], textarea[required]');
+
+  form.addEventListener('input', () => {
+    const isFormValid = Array.from(requiredInputs).every(input => input.value !== '');
+    sendBtn.disabled = !isFormValid;
+  });
