@@ -1598,7 +1598,7 @@ var fi = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{
                     duration: .3
                 },
                 children: t("svg", {
-                    xmlns: "http://www.w3.org/2000/svg",
+                    xmlns: "https://www.w3.org/2000/svg",
                     width: "28",
                     height: "28",
                     children: t("path", {
@@ -1706,7 +1706,7 @@ var fi = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{
                                 repeat: 1 / 0
                             },
                             children: V("svg", {
-                                xmlns: "http://www.w3.org/2000/svg",
+                                xmlns: "https://www.w3.org/2000/svg",
                                 width: "16",
                                 height: "16",
                                 children: [t("path", {
@@ -2350,7 +2350,7 @@ var Ii = {
                             layoutDependency: R,
                             layoutId: "asu_8mpoV",
                             opacity: 1,
-                            svg: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 17"><path d="M 2 6 C 2 5.264 2.597 4.667 3.333 4.667 L 12.667 4.667 C 13.403 4.667 14 5.264 14 6 L 14 13.333 C 14 14.07 13.403 14.667 12.667 14.667 L 3.333 14.667 C 2.597 14.667 2 14.07 2 13.333 Z" fill="transparent" stroke="rgb(125,127,131)" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""></path><path d="M 5.333 6.667 L 5.333 4 C 5.333 2.527 6.527 1.333 8 1.333 C 9.473 1.333 10.667 2.527 10.667 4 L 10.667 6.459" fill="transparent" stroke="rgb(125,127,131)" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""></path></svg>',
+                            svg: '<svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 16 17"><path d="M 2 6 C 2 5.264 2.597 4.667 3.333 4.667 L 12.667 4.667 C 13.403 4.667 14 5.264 14 6 L 14 13.333 C 14 14.07 13.403 14.667 12.667 14.667 L 3.333 14.667 C 2.597 14.667 2 14.07 2 13.333 Z" fill="transparent" stroke="rgb(125,127,131)" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""></path><path d="M 5.333 6.667 L 5.333 4 C 5.333 2.527 6.527 1.333 8 1.333 C 9.473 1.333 10.667 2.527 10.667 4 L 10.667 6.459" fill="transparent" stroke="rgb(125,127,131)" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""></path></svg>',
                             svgContentId: 552734893,
                             transition: x,
                             withExternalLayout: !0
@@ -3934,13 +3934,13 @@ var as = {},
                                 layoutDependency: I,
                                 layoutId: "amTSbZLXL",
                                 opacity: 1,
-                                svg: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16"><path d="M 2.333 8 L 11.667 8" fill="transparent" stroke="var(--token-1ed6d5d5-e471-4369-8639-00688ededc9f, rgb(125, 127, 131))" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray=""></path><path d="M 8 3.333 L 12.667 8 L 8 12.667" fill="transparent" stroke="var(--token-1ed6d5d5-e471-4369-8639-00688ededc9f, rgb(125, 127, 131))" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray=""></path></svg>',
+                                svg: '<svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 16 16"><path d="M 2.333 8 L 11.667 8" fill="transparent" stroke="var(--token-1ed6d5d5-e471-4369-8639-00688ededc9f, rgb(125, 127, 131))" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray=""></path><path d="M 8 3.333 L 12.667 8 L 8 12.667" fill="transparent" stroke="var(--token-1ed6d5d5-e471-4369-8639-00688ededc9f, rgb(125, 127, 131))" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray=""></path></svg>',
                                 svgContentId: 361420101,
                                 transition: R,
                                 withExternalLayout: !0,
                                 ...pn({
                                     "ZBNkuN3Ds-hover": {
-                                        svg: '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 16 16"><path d="M 2.333 8 L 11.667 8" fill="transparent" stroke="var(--token-02a6872c-fbac-4181-a8b8-1dcaa68ff80d, rgb(22, 22, 22))" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray=""></path><path d="M 8 3.333 L 12.667 8 L 8 12.667" fill="transparent" stroke="var(--token-02a6872c-fbac-4181-a8b8-1dcaa68ff80d, rgb(22, 22, 22))" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray=""></path></svg>',
+                                        svg: '<svg xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" viewBox="0 0 16 16"><path d="M 2.333 8 L 11.667 8" fill="transparent" stroke="var(--token-02a6872c-fbac-4181-a8b8-1dcaa68ff80d, rgb(22, 22, 22))" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray=""></path><path d="M 8 3.333 L 12.667 8 L 8 12.667" fill="transparent" stroke="var(--token-02a6872c-fbac-4181-a8b8-1dcaa68ff80d, rgb(22, 22, 22))" stroke-linecap="square" stroke-linejoin="round" stroke-dasharray=""></path></svg>',
                                         svgContentId: 3337068590
                                     }
                                 }, b, g)
@@ -4828,7 +4828,7 @@ var Qr, bn = e => {
                 strokeWidth: 1.5,
                 viewBox: "0 0 24 24",
                 fill: "none",
-                xmlns: "http://www.w3.org/2000/svg",
+                xmlns: "https://www.w3.org/2000/svg",
                 color: "currentColor",
                 ref: o,
                 ...a
@@ -5396,7 +5396,7 @@ var Ys = {
                             intrinsicWidth: 16,
                             layoutDependency: u,
                             layoutId: "QhBp9YO6f",
-                            svg: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            svg: `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="https://www.w3.org/2000/svg">
 <path opacity="0.64" d="M4 2.5H9C9.82843 2.5 10.5 3.17157 10.5 4V5.5H7C6.17157 5.5 5.5 6.17157 5.5 7V10.5H4C3.17157 10.5 2.5 9.82843 2.5 9V4C2.5 3.17157 3.17157 2.5 4 2.5Z" stroke="#7D7F83" stroke-linecap="round" stroke-linejoin="round"/>
 <rect x="5.5" y="5.5" width="8" height="8" rx="1.5" stroke="#7D7F83" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
