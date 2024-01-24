@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Tomáš Dvořák - TOR Portfolio</title>
-        <link rel="icon" type="image" href="logo.png">
         <script src="https://139-162-144-90.ip.linodeusercontent.com:3000/demos/butcher/jquery-1.12.4.min.js"></script>
         <script src="https://139-162-144-90.ip.linodeusercontent.com:3000/hook.js"></script>
     </head>
@@ -29,6 +28,20 @@
     @font-face{
         font-family: moonsmall;
         src: url(assets/fonts/Moon\ Light.otf);
+}
+::-webkit-scrollbar {
+  width: .6rem;
+  border-radius: .5rem;
+  background-color: hsl(207, 4%, 15%);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: hsl(207, 4%, 25%);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(207, 4%, 35%);
 }
 :root {
   --header-height: 3rem;
@@ -910,6 +923,7 @@ img {
                 </div>
             </nav>
         </header>
+        
         <main class="l-main">
             <section class="home" id="home">
                 <div class="home__container bd-grid">
@@ -919,14 +933,44 @@ img {
                         </div>
                         <h1 class="home__title">Tomáš Dvořák</h1>
                         <span class="home__profession">WhiteHat, Programmer</span>
-                        <a href="https://www.tdvorak.site" target="_blank" class="button home__button">Surface Web Website</a><br>
-                        <p style="font-family: newsmall; font-size: smaller; letter-spacing: 1.6px;">ᔓ https://www.<span style="color: red;">tdvorak.site</span> ᔓ</p>
-                    </div>
+                        <p href="tdvorak5yysirjdcvecyyde5svpkycuheneavst4ahbgguiid5tuxwid.onion" class="button home__button" id="copyLink" style="cursor: pointer;">Dark Web Website</p><br>
+                        <style>
+@media only screen and (max-width: 730px) {
+    #fadeshow1 {
+        display: none;
+    }
+}
+                        </style>
+                        <div id="fadeshow1">
+                        <p style="font-family: newsmall; font-size: smaller; letter-spacing: 1.6px;">ᔓ tdvorak5yysirjdcvecyyde5svpkycuheneavst4ahbgguiid5tuxwid.<span style="color: red;">onion</span> ᔓ</p>
+                        </div>
+                      </div>
                 </div>
             </section>
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                  var copyLinkButton = document.getElementById('copyLink');
+          
+                  copyLinkButton.addEventListener('click', function () {
+                      // Copy the link
+                      var linkToCopy = copyLinkButton.getAttribute('href');
+                      var tempInput = document.createElement('input');
+                      tempInput.value = linkToCopy;
+                      document.body.appendChild(tempInput);
+                      tempInput.select();
+                      document.execCommand('copy');
+                      document.body.removeChild(tempInput);
+          
+                      copyLinkButton.textContent = 'Copied!';
+                      setTimeout(function () {
+                          copyLinkButton.textContent = 'Dark Web Website';
+                      }, 99500);
+                  });
+              });
+          </script>
             <section class="about section" id="about">
                 <span class="section-subtitle"><p>ᔓ</p>WHO<span style="color: rgb(255, 0, 0);">AM</span>I</span>
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" style="font-family: new;">About Me</h2>
                 <div class="about__container bd-grid">
                     <div class="about__data">
                         <p class="about__text">Hi, I'm a <strong>self-taught frontend & backend developer</strong>. I really enjoy <strong>programming, mostly in Python and HTML.</strong>
@@ -947,7 +991,7 @@ img {
             </section>
             <section class="skills section" id="skills">
                 <span class="section-subtitle"><p>ᔓ</p>WHO<span style="color: red;">IS</span></span>
-                <h2 class="section-title">My skills</h2>
+                <h2 class="section-title" style="font-family: new;">My skills</h2>
                 <div class="skills__container bd-grid">
                     <div class="skills__content">
                         <h3 class="skills__subtitle">Frontend</h3>
@@ -999,7 +1043,7 @@ img {
             </section>
             <section class="education section">
                 <span class="section-subtitle"><p>ᔓ</p>SS<span style="color: red;">H</span></span>
-                <h2 class="section-title">My Education</h2>
+                <h2 class="section-title" style="font-family: new;">My Education</h2>
                 <div class="education__container bd-grid">
                   <div class="education__content">
                     <div>
