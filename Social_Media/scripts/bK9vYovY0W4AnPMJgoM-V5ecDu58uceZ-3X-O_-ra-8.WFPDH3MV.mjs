@@ -6272,7 +6272,7 @@ var xl = {
                                                         src: "instagram.png",
                                                     },
                                                     layoutId: "YzU_mvjSo",
-                                                    link: "https://www.instagram.com/dv0rinka_photos/",
+                                                    link: "https://www.instagram.com/tdv0rak_photos/",
                                                     productLinkLS: "",
                                                     style: {
                                                         width: "100%"
@@ -6325,7 +6325,7 @@ var xl = {
                                                         src: "instagram.png",
                                                     },
                                                     layoutId: "YzU_mvjSo",
-                                                    link: "https://www.instagram.com/dv0rinka_/",
+                                                    link: "https://www.instagram.com/tdv0rak_/",
                                                     productLinkLS: "",
                                                     style: {
                                                         width: "100%"

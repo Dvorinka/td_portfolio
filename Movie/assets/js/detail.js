@@ -43,7 +43,6 @@ const getDirectors = function (crewList) {
   return directorList.join(", ");
 }
 
-// returns only trailers and teasers as array
 const filterVideos = function (videoList) {
   return videoList.filter(({ type, site }) => (type === "Trailer" || type === "Teaser") && site === "YouTube");
 }
@@ -64,7 +63,7 @@ fetchDataFromServer(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${api
     videos: { results: videos }
   } = movie;
 
-  document.title = `${title} - Tvflix`;
+  document.title = `${title} - TD`;
 
   const movieDetail = document.createElement("div");
   movieDetail.classList.add("movie-detail");
@@ -161,17 +160,12 @@ const addSuggestedMovies = function ({ results: movieList }, title) {
   movieListElem.ariaLabel = "You May Also Like";
 
   movieListElem.innerHTML = `
-    <div class="title-wrapper">
-      <h3 class="title-large">You May Also Like</h3>
-    </div>
     
-    <div class="slider-list">
-      <div class="slider-inner"></div>
-    </div>
+
   `;
 
   for (const movie of movieList) {
-    const movieCard = createMovieCard(movie); // called from movie_card.js
+    const movieCard = createMovieCard(movie);
 
     movieListElem.querySelector(".slider-inner").appendChild(movieCard);
   }

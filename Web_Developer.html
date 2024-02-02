@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomas Dvorak - Web Developer</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body style="overflow: hidden; ">
+      <script>
+        let isAnimationInProgress = false;
+
+// JavaScript function for gradual scroll to the bottom of the page
+function gradualScrollToBottom() {
+    if (isAnimationInProgress) {
+        // Animation is already in progress, do nothing
+        return;
+    }
+
+    isAnimationInProgress = true;
+
+    const lastSection = document.querySelector('section:last-child');
+    const targetPosition = lastSection.offsetTop;
+    const currentPosition = window.scrollY;
+    const distance = targetPosition - currentPosition;
+    const duration = 5000; // Scroll duration in milliseconds
+
+    let startTimestamp;
+    function step(timestamp) {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const elapsed = timestamp - startTimestamp;
+
+        window.scrollTo(0, easeInOut(elapsed, currentPosition, distance, duration));
+
+        if (elapsed < duration) {
+            requestAnimationFrame(step);
+        } else {
+            // Animation has ended, reset the flag and trigger redirection after a delay
+            isAnimationInProgress = false;
+            setTimeout(() => {
+                window.location.href = 'Timeline.html';
+            }, 300);
+        }
+    }
+
+    function easeInOut(t, b, c, d) {
+        // Easing function for smooth scrolling
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(step);
+}
+      </script>
+      <section id="html">
+        <h1>HTML</h1>
+        <button onclick="gradualScrollToBottom()">START</button>
+      </section>
+      <section id="css">
+        <h1>CSS</h1>
+      </section>
+      <section id="js">
+        <h1>Javascript</h1>
+      </section>
+      <section id="js">
+        <h1>React.js</h1>
+      </section>
+      <section id="python">
+        <h1>Python</h1>
+      </section>
+      <section id="c">
+        <h1>C</h1>
+      </section>
+      <section id="c++">
+        <h1>C++</h1>
+      </section>
+      <section id="php">
+        <h1>PHP</h1>
+      </section>
+      <section id="java">
+        <h1>JAVA</h1>
+      </section>
+      <section id="ruby">
+        <h1>Ruby</h1>
+      </section>
+      <section id="typescript">
+        <h1>Typescript</h1>
+      </section>
+</body>
+</html>

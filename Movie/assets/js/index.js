@@ -1,8 +1,5 @@
 'use strict';
 
-/**
- * import all components and functions
- */
 
 import { sidebar } from "./sidebar.js";
 import { api_key, imageBaseURL, fetchDataFromServer } from "./api.js";
@@ -17,9 +14,6 @@ sidebar();
 
 
 
-/**
- * Home page sections (Top rated, Upcoming, Trending movies)
- */
 
 const homePageSections = [
   {
@@ -38,18 +32,14 @@ const homePageSections = [
 
 
 
-/**
- * fetch all genres eg: [ { "id": "123", "name": "Action" } ]
- * then change genre formate eg: { 123: "Action" }
- */
 const genreList = {
 
-  // create genre string from genre_id eg: [23, 43] -> "Action, Romance".
+
   asString(genreIdList) {
     let newGenreList = [];
 
     for (const genreId of genreIdList) {
-      this[genreId] && newGenreList.push(this[genreId]); // this == genreList;
+      this[genreId] && newGenreList.push(this[genreId]);
     }
 
     return newGenreList.join(", ");
@@ -147,9 +137,6 @@ const heroBanner = function ({ results: movieList }) {
   addHeroSlide();
 
 
-  /**
-   * fetch data for home page sections (top rated, upcoming, trending)
-   */
   for (const { title, path } of homePageSections) {
     fetchDataFromServer(`https://api.themoviedb.org/3${path}?api_key=${api_key}&page=1`, createMovieList, title);
   }
@@ -158,9 +145,6 @@ const heroBanner = function ({ results: movieList }) {
 
 
 
-/**
- * Hero slider functionality
- */
 
 const addHeroSlide = function () {
 
