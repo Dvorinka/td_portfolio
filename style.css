@@ -1,6 +1,4 @@
-* {
-  cursor: none;
-}
+
 
 :root {
   --background-dark: #111111;
@@ -662,6 +660,7 @@ a:hover {
   color: rgba(255, 255, 255, 0.616);
   font-weight: bold;
   transform: scale(1.02);
+  cursor: pointer;
 }
 
 .send-btn {
@@ -671,4 +670,16 @@ a:hover {
 .send-btn:active {
   background-color: #333;
   color: #fff;
+}
+
+.flags {
+  margin: 10px auto 20px;
+}
+
+.flags img {
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 6%;
 }
