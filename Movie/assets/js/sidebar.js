@@ -30,8 +30,10 @@ export function sidebar() {
     
     <div class="sidebar-footer">
       <p class="copyright">
-        Copyright 2024 <a href="https://tdvorak.site" target="_blank">Tomas Dvorak</a>
+        <h6>All Rights Reserved.</h6>
+        Copyright 2024 <a href="https://tdvorak.site" target="_blank">Tomas Dvorak </a>
       </p>
+      
     <p>Powered by
       <img src="./assets/images/tmdb-logo.svg" width="130" height="17" alt="the movie database logo">
     </div>
