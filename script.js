@@ -129,3 +129,4 @@ const form = document.getElementById('myForm');
     const isFormValid = Array.from(requiredInputs).every(input => input.value !== '');
     sendBtn.disabled = !isFormValid;
   });
+
