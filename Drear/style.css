@@ -567,5 +567,8 @@ font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
 	.strip-cover__title {
 		filter: none;
 		text-shadow: none;
+	}	
+	.strip-cover__subtitle {
+		font-size: 3vw;
 	}
 }
