@@ -561,3 +561,11 @@ font-display:auto;font-style:normal;font-weight:400;font-stretch:normal;
 	font-family: freedoka;
 	src: url(Fredoka-VariableFont_wdth\,wght.ttf);
 }
+
+@media (max-width: 820px) {
+
+	.strip-cover__title {
+		filter: none;
+		text-shadow: none;
+	}
+}
