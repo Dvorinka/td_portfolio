@@ -321,6 +321,7 @@ body {
   border-block-end: 1px solid var(--outline-variant);
 }
 
+
 .tab-btn {
   height: 48px;
   width: 100%;
@@ -329,6 +330,14 @@ body {
   background-color: var(--surface);
   color: var(--on-surface-variant);
   --state-layer-bg: var(--on-surface-variant);
+}
+
+.tab-btn:first-child{
+  border-top-left-radius: 12px;
+}
+
+.tab-btn:last-child{
+  border-top-right-radius: 12px;
 }
 
 .tab-btn.active {
@@ -496,6 +505,10 @@ body {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+.project{
+  border-top-left-radius: 10px;
 }
 
 .project-list {

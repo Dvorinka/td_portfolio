@@ -120,13 +120,3 @@ function sendEmail() {
     console.log('FAILED...', error);
   });
 }
-
-const form = document.getElementById('myForm');
-  const sendBtn = document.querySelector('.send-btn');
-  const requiredInputs = form.querySelectorAll('input[required], textarea[required]');
-
-  form.addEventListener('input', () => {
-    const isFormValid = Array.from(requiredInputs).every(input => input.value !== '');
-    sendBtn.disabled = !isFormValid;
-  });
-
