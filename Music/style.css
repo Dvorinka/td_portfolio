@@ -41,7 +41,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-image: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/aa462558-0106-4268-9864-d34a4f35531f);
+  background-color: #090909;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -53,7 +53,7 @@ main {
   grid-template-columns: 11% 89%;
   width: 95%;
   margin: 40px;
-  background: rgba(16, 21, 61, 0.5);
+  background: rgb(9, 9, 9);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -103,10 +103,6 @@ main {
   border-radius: 5px;
 }
 
-.nav-item.active a {
-  background: rgba(106, 109, 155, 0.5);
-  text-decoration: none;
-}
 
 .nav-icon {
   width: 40px;
@@ -128,6 +124,11 @@ main {
   grid-template-columns: 75% 25%;
 }
 
+.content2 {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
 /* LEFT CONTENT */
 
 .left-content {
@@ -144,7 +145,7 @@ main {
 
 .swiper {
   width: 100%;
-  padding: 16px 0 20px;
+  padding: 16px 0 40px;
   margin-bottom: 50px;
 }
 
@@ -157,7 +158,7 @@ main {
   border-radius: 20px;
   height: 300px;
   object-fit: cover;
-  border: 2px solid rgba(159, 160, 168, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.897);
 }
 
 .swiper-pagination {
@@ -187,31 +188,50 @@ main {
   inset: 0;
   width: 100%;
   height: 98%;
-  background: linear-gradient(
-    240deg,
-    transparent,
-    transparent,
-    rgba(38, 21, 149, 0.8)
-  );
   border-radius: 20px;
   padding: 30px;
+  background: transparent;
+  transition: background 1s ease-in-out;
+  box-shadow: 10px 12px 0px 0px #ffffff;
+}
+
+.slide-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: linear-gradient(
+      240deg,
+      transparent 20%,
+      transparent 50%,
+      rgba(255, 0, 0, 0.637) 100%
+  );
+  opacity: 0;
+  border-radius: 20px;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.slide-overlay.active::before {
+  opacity: 1;
 }
 
 .slide-overlay h2 {
   font-size: clamp(1.2rem, 3vw, 2.2rem);
-  font-weight: 700;
+  font-weight: 800;
+  text-shadow: 5px 5px 0 #ffffff;
+  color: transparent;
+  z-index: 2;
 }
 
-.slide-overlay button {
-  display: flex;
+.slide-overlay a {
   align-items: center;
   justify-content: center;
   column-gap: 10px;
   width: max-content;
   padding: 12px 16px;
-  background: #e9e6eb2a;
-  color: #e8e5e5;
-  border: 1px solid rgba(159, 160, 168, 0.4);
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgb(255, 255, 255);
   border-radius: 12px;
   outline: 0;
   font-size: clamp(0.7rem, 3vw, 1rem);
@@ -221,11 +241,14 @@ main {
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
   transition: all 0.4s linear;
   cursor: pointer;
+  z-index: 2;
+  text-decoration: none;
 }
 
-.slide-overlay button:is(:hover, :focus-visible) {
-  background: #e9e6eb;
-  color: #000;
+.slide-overlay a:is(:hover, :focus-visible) {
+  background: #fff;
+  color: rgb(0, 0, 0);
+  box-shadow: 4px 4px 0 2px rgb(0, 0, 0);
 }
 
 /* Containers of Artist and Albums */
@@ -263,17 +286,20 @@ main {
 .artist img {
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid rgba(169, 150, 253, 0.5);
+  border: 2px solid rgb(255, 255, 255);
   width: 140px;
+  scale: 0.9;
   aspect-ratio: 1/1;
   margin-bottom: 8px;
-  box-shadow: rgba(221, 221, 221, 0.3) 0px 6px 18px -3px,
-    rgba(221, 221, 221, 0.2) 0px -3px 0px inset;
-  transition: all 0.2s;
+  transition: transform 0.8s;
 }
 
 .artist img:hover {
-  border: 4px solid rgba(169, 150, 253, 0.6);
+  border: 4px solid rgb(255, 0, 0);
+  box-shadow: rgb(255, 0, 0) 0px 3px 14px -3px,
+  rgb(255, 0, 0) 0px -3px 5px inset;
+  box-shadow: none inset;
+  transform: rotate(-3deg) scale(1.12);
 }
 
 .artist p {
@@ -307,10 +333,8 @@ main {
   position: relative;
   width: 180px;
   aspect-ratio: 1/1;
-  border: 2px solid rgba(169, 150, 253, 0.5);
+  border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
-  box-shadow: rgba(221, 221, 221, 0.3) 0px 8px 18px -3px,
-    rgba(221, 221, 221, 0.2) 0px -3px 0px inset;
   margin-bottom: 15px;
   overflow: hidden;
 }
@@ -325,6 +349,12 @@ main {
 
 .album-frame img:hover {
   transform: rotate(3deg) scale(1.2);
+}
+
+.album-frame:hover{
+  border: 4px solid rgb(255, 0, 0);
+  box-shadow: rgb(255, 0, 0) 0px 3px 14px -3px,
+  rgb(255, 0, 0) 0px -3px 5px inset;
 }
 
 .album h2 {
@@ -357,16 +387,11 @@ main {
   height: 10px;
 }
 
-.artist-container::-webkit-scrollbar-track,
-.album-container::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 0.3rem rgb(79, 78, 78);
-  border-radius: 40px;
-}
 
 .artist-container::-webkit-scrollbar-thumb,
 .album-container::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 0.5rem rgb(116, 116, 116);
-  background-color: rgba(25, 43, 206, 0.2);
+  box-shadow: inset 0 0 0.5rem rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
   outline: none;
   border-radius: 40px;
 }
@@ -409,9 +434,7 @@ main {
   aspect-ratio: 4/3;
   border-radius: inherit;
   object-fit: cover;
-  border: 2px solid rgba(159, 160, 168, 0.5);
-  box-shadow: rgba(221, 221, 221, 0.3) 0px 6px 18px -3px,
-    rgba(221, 221, 221, 0.2) 0px -3px 0px inset;
+  border: 2px solid rgba(255, 255, 255, 0.884);
 }
 
 .song-img .overlay {
@@ -422,12 +445,13 @@ main {
   inset: 0;
   width: 100%;
   height: 92%;
-  background-color: rgba(169, 150, 253, 0.6);
   border-radius: inherit;
   font-size: 1.75rem;
   opacity: 0;
   transition: all 0.4s linear;
   cursor: pointer;
+  box-shadow: rgb(255, 0, 0) 0px 3px 14px -3px,
+  rgb(255, 0, 0) 0px -3px 0px inset;
 }
 
 .song-img:hover .overlay {
@@ -448,409 +472,20 @@ main {
   opacity: 0.8;
 }
 
-/* MUSIC PLAYER */
-
-.music-player {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  background: rgba(188, 184, 198, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: inset 2px -2px 6px rgba(214, 214, 214, 0.2),
-    inset -3px 3px 3px rgba(255, 255, 255, 0.3);
-  border-radius: 16px;
-  padding: 30px 20px;
-  margin-top: 20px;
+.bandsvid{
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.884);
+  margin-bottom: 25px;
 }
 
-.album-cover {
-  position: relative;
+.splitter{
+  border-top: 1px solid rgba(255, 255, 255, 0.884);
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
-.album-cover img {
-  border-radius: 50%;
-  border: 2px solid rgba(222, 215, 255, 0.9);
-  max-width: 120px;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  box-shadow: 0 10px 60px rgba(200, 187, 255, 01.75rem);
-  transition: transform 0.5s ease-out;
-  pointer-events: none;
-  user-select: none;
-}
-
-.point {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width: 16px;
-  background-color: rgba(17, 6, 58, 0.7);
-  border: 2px solid rgba(222, 215, 255, 0.9);
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.music-player h2 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin: 16px 0 2px;
-}
-
-.music-player p {
-  font-size: 1rem;
-  font-weight: 300;
-  margin-bottom: 26px;
-  opacity: 0.8;
-}
-
-/* Music Player Controls */
-
-#progress {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 100%;
-  height: 6px;
-  background: rgba(200, 187, 255, 0.6);
-  border-radius: 4px;
-  margin-bottom: 16px;
-  cursor: pointer;
-}
-
-#progress::-webkit-slider-thumb {
-  appearance: none;
-  -webkit-appearance: none;
-  background: rgb(77, 58, 162);
-  width: 20px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  border: 4px solid rgb(234, 229, 255);
-  box-shadow: 0 6px 10px rgba(200, 187, 255, 0.4);
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.controls button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  aspect-ratio: 1/1;
-  margin: 20px;
-  background: rgba(200, 187, 255, 0.6);
-  border-radius: 50%;
-  border: 0;
-  outline: 0;
-  color: #fff;
-  font-size: 1.1rem;
-  box-shadow: 0 4px 8px rgba(200, 187, 255, 0.3);
-  cursor: pointer;
-  transition: all 0.3s linear;
-}
-
-.controls button:is(:hover, :focus-visible) {
-  transform: scale(0.96);
-}
-
-.controls button:nth-child(2) {
-  transform: scale(1.3);
-}
-
-.controls button:nth-child(2):is(:hover, :focus-visible) {
-  transform: scale(1.25);
-}
-
-/* MEDIA QUERIES */
-
-@media (max-width: 1500px) {
-  main {
-    grid-template-columns: 6% 94%;
-  }
-
-  .user-info img {
-    border-radius: 50%;
-    padding: 12px 12px 6px;
-  }
-
-  .nav-icon {
-    text-align: center;
-    transform: translateY(2px);
-  }
-
-  .nav-text {
-    display: none;
-  }
-
-  .content {
-    grid-template-columns: 70% 30%;
-  }
-}
-
-@media (max-width: 1310px) {
-  main {
-    grid-template-columns: 8% 92%;
-    margin: 30px;
-  }
-}
-
-@media (max-width: 1250px) {
-  .swiper-slide {
-    width: 500px;
-  }
-
-  .swiper-slide img {
-    border-radius: 16px;
-    height: 280px;
-  }
-
-  .artist {
-    grid-template-rows: 7fr 2fr;
-  }
-
-  .artist img {
-    width: 120px;
-  }
-
-  .album-frame {
-    width: 160px;
-  }
-  
-  .song {
-    grid-template-columns: 29% auto 10%;
-  }
-
-  .controls button {
-    margin: 15px;
-  }
-}
-
-@media (max-width: 1100px) {
-  .content {
-    grid-template-columns: 60% 40%;
-  }
-
-  .left-content {
-    padding: 40px 20px 20px;
-  }
-
-  .swiper-slide {
-    width: 410px;
-  }
-
-  .swiper-slide img {
-    height: 220px;
-  }
-
-  .artist {
-    grid-template-rows: 5fr 2fr;
-  }
-
-  .artist img {
-    width: 90px;
-  }
-
-  .album {
-    grid-template-rows: 4fr 2fr;
-  }
-
-  .album-frame {
-    width: 130px;
-  }
-  
-   .song {
-    grid-template-columns: 26% auto 10%;
-  }
-
-  .song:nth-child(8),
-  .song:nth-child(9) {
-    display: none;
-  }
-}
-
-@media (max-width: 910px) {
-  main {
-    grid-template-columns: 10% 90%;
-    margin: 20px;
-  }
-
-  .left-content {
-    padding: 30px 20px 20px;
-  }
-
-  .swiper-slide {
-    width: 350px;
-  }
-
-  .swiper-slide img {
-    height: 180px;
-  }
-
-  .artist {
-    grid-template-rows: 4fr 2fr;
-  }
-
-  .artist img {
-    width: 80px;
-  }
-
-  .album {
-    grid-template-rows: 3fr 2fr;
-  }
-
-  .album-frame {
-    width: 100px;
-  }
-
-  .right-content {
-    grid-template-rows: 55% 45%;
-  }
-   
-  .song {
-    grid-template-columns: 30% auto 12%;
-  }
-  
-  .song:nth-child(7) {
-    display: none;
-  }
-}
-
-@media (max-width: 825px) {
-  .content {
-    grid-template-columns: 52% 48%;
-  }
-
-  .swiper-slide {
-    width: 320px;
-  }
-
-  .swiper-slide img {
-    height: 200px;
-  }
-
-  .slide-overlay {
-    row-gap: 8px;
-    padding: 12px 36px;
-  }
-
-  .slide-overlay button {
-    padding: 8px 12px;
-  }
-
-  .song {
-    grid-template-columns: 28% auto 10%;
-  }
-}
-
-@media (max-width: 700px) {
-  main {
-    grid-template-columns: 15% 85%;
-  }
-
-  .content {
-    grid-template-columns: 100%;
-    grid-template-areas:
-      "leftContent"
-      "rightContent";
-  }
-
-  .left-content {
-    grid-area: leftContent;
-  }
-
-  .slide-overlay {
-    row-gap: 12px;
-    padding: 20px 30px;
-  }
-
-  .swiper-slide {
-    width: 420px;
-  }
-
-  .artist img {
-    width: 110px;
-  }
-
-  .album {
-    grid-template-rows: 3fr 2fr;
-  }
-
-  .album-frame {
-    width: 140px;
-  }
-
-  .right-content {
-    grid-area: rightContent;
-    border-left: unset;
-    grid-template-rows: 60% 40%;
-    row-gap: 16px;
-  }
-  
-   .song {
-    grid-template-columns: 18% auto 8%;
-  }
-
-  .song:nth-child(7),
-  .song:nth-child(8),
-  .song:nth-child(9) {
-    display: grid;
-  }
-
-  .controls button {
-    margin: 20px;
-  }
-}
-
-@media (max-width: 580px) {
-  .swiper-slide {
-    width: 340px;
-  }
-
-  .swiper-slide img {
-    height: 180px;
-  }
-
-  .artist img {
-    width: 80px;
-  }
-
-  .album {
-    grid-template-rows: 3fr 2fr;
-  }
-
-  .album-frame {
-    width: 100px;
-  }
-  
-   .song {
-    grid-template-columns: 23% auto 8%;
-  }
-}
-
-@media (max-width: 450px) {
-  .user-info img {
-    border-radius: 50%;
-    padding: 6px 6px 2px;
-  }
-
-  .swiper-slide {
-    width: 320px;
-  }
-
-  .slide-overlay {
-    row-gap: 8px;
-    padding: 12px 36px;
-  }
-  
-   .song {
-    grid-template-columns: 25% auto 8%;
-  }
+.splitter2{
+  border-top: 1px solid rgba(255, 255, 255, 0.884);
+  margin-top: 15px;
+  margin-bottom: 10px;
 }
