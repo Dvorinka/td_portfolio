@@ -1,55 +1,51 @@
-$uicideboy$
-A Day To Remember
-Against The Current
-All That Remains
-Apocalyptica
-Architects
-Architects
-Asking Alexandria
-Avenged Sevenfold
-BABYMETAL
-Bad Omens
-Black Veil Brides
-Bring Me The Horizon
-Bullet For My Valentine
-Crystal Lake
-Disturbed
-Dope
-Dymytry
-Electric Callboy
-Fall Out Boy
-Falling In Reverse
-Five Finger Death Punch
-Ghostemane
-Hollywood Undead
-Ice Nine Kills
-In Flames
-Kordhell
-Korn
-Linkin Park
-Little V.
-Lorna Shore
-Memphis May Fire
-Mike Shinoda
-Motionless In White
-My Darkest Days
-Nik Nocturnal
-Papa Roach
-Parkway Drive
-Powerwolf
-Reznik
-Sabaton
-Skillet
-Slaughter to Prevail
-Sleep Token
-Slipknot
-Sum 41
-System Of A Down
-The Animal In Me
-The Offspring
-Thousand Foot Krutch
-Three Days Grace
-UMC
-Wage War
-We Came As Romans
-thrown
+$uicideboy$ -
+A Day To Remember -
+Against The Current -
+All That Remains -
+Apocalyptica -
+Architects -
+Asking Alexandria -
+Avenged Sevenfold -
+BABYMETAL -
+Bad Omens -
+Black Veil Brides -
+Bring Me The Horizon -
+Bullet For My Valentine -
+Crystal Lake -
+Disturbed -
+Dymytry -
+Electric Callboy -
+Fall Out Boy -
+Falling In Reverse -
+Five Finger Death Punch -
+Ghostemane -
+Hollywood Undead -
+Ice Nine Kills -
+In Flames -
+Kordhell -
+Korn -
+Linkin Park -
+Little V. -
+Lorna Shore -
+Memphis May Fire -
+Mike Shinoda -
+Motionless In White -
+My Darkest Days -
+Nik Nocturnal -
+Papa Roach -
+Parkway Drive -
+Powerwolf -
+Reznik -
+Sabaton -
+Skillet -
+Slaughter to Prevail -
+Sleep Token -
+Slipknot -
+Sum 41 -
+System Of A Down -
+The Animal In Me -
+The Offspring -
+Thousand Foot Krutch -
+Three Days Grace -
+Wage War -
+We Came As Romans -
