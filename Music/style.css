@@ -543,10 +543,10 @@ main {
   .swiper-slide {
     width: 100%;
   }
-  .logo{
+  .logo {
     display: none;
   }
-  .slide-overlay{
+  .slide-overlay {
     box-shadow: none;
   }
 }
@@ -561,11 +561,15 @@ main {
   .swiper-slide {
     width: 100%;
   }
-  .logo{
+  .logo {
     display: none;
   }
-  .slide-overlay{
+  .slide-overlay {
     box-shadow: none;
+  }
+  .bandsvid{
+    width: 280px;
+    height: 157.5px;
   }
 }
 
