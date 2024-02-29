@@ -84,7 +84,6 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 li { list-style: none; }
@@ -287,7 +286,7 @@ body {
 
 .tab-content:not(.active) { display: none; }
 
-.section-title { margin-block-end: 16px; }
+.section-title { margin-block-end: 16px; font-size: medium;}
 
 .icon-btn {
   width: 40px;
@@ -724,5 +723,7 @@ a:hover {
 }
 
 .cv{
-  padding: 15px 0 40px 80px;
+  margin: auto;
+  width: 50%;
+  padding: 10px 0px 40px;
 }
