@@ -13,6 +13,11 @@
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://tdvorak.site/index.html</loc>
+  <lastmod>2024-03-04T21:30:55+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
   <loc>https://tdvorak.site/TOR/</loc>
   <lastmod>2024-03-04T21:30:55+00:00</lastmod>
   <priority>0.80</priority>
@@ -48,9 +53,9 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://tdvorak.site/index.html</loc>
-  <lastmod>2024-03-04T21:30:55+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://tdvorak.site/Blog</loc>
+  <lastmod>2024-04-04T21:30:55+00:00</lastmod>
+  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://tdvorak.site/Drear/index_cz.html</loc>
