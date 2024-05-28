@@ -250,7 +250,7 @@ export const updateWeather = function (lat, lon) {
 
       for (const [index, data] of forecastList.entries()) {
 
-        if (index > 7) break;
+        if (index > 12) break;
 
         const {
           dt: dateTimeUnix,
