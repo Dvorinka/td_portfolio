@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freedom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+        #countdown {
+            font-size: 2em;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #ffcc00;
+            border-radius: 10px;
+            display: inline-block;
+            width: 100%;
+            max-width: 600px;
+        }
+        .calendar {
+            margin-top: 30px;
+            display: inline-block;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+        table {
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .crossed {
+            text-decoration: line-through;
+            color: #999;
+        }
+        .note {
+            margin-top: 30px;
+            background-color: #f9e0fa;
+            padding: 15px;
+            border-radius: 10px;
+            display: inline-block;
+            width: 100%;
+            max-width: 600px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #a29ea2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #ba84ba;
+        }
+        .note-history {
+            margin-top: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .note-item {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .note-item:last-child {
+            border-bottom: none;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            #countdown {
+                font-size: 1.5em;
+                padding: 15px;
+            }
+            .calendar, .note {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Odpočítávání do svobody</h1>
+    <p>Zbývá ještě:</p>
+    <div id="countdown"></div><br>
+
+    <div class="calendar">
+        <h2>Aktuální měsíc</h2>
+        <div id="calendar"></div>
+    </div>
+
+    <p id="currentDate"></p>
+
+    <div class="note">
+        <h3>Poznámky k dnešnímu dni</h3>
+        <textarea id="noteInput" rows="4" placeholder="Zadejte svou poznámku zde..."></textarea>
+        <br>
+        <button onclick="saveNote()">Uložit poznámku</button>
+    </div>
+
+    <div class="note-history">
+        <h3>Historie poznámek</h3>
+        <div id="noteHistory"></div>
+    </div>
+
+    <script>
+        // Datum konce školy (maturita v červnu 2026)
+        const endDate = new Date("Jun 30, 2026 00:00:00").getTime();
+
+        // Funkce pro aktualizaci odpočtu
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = endDate - now;
+
+            // Výpočty pro dny, hodiny, minuty a sekundy
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Zobrazení výsledků
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            // Pokud odpočet skončí, zobrazí zprávu
+            if (distance < 0) {
+                clearInterval(interval);
+                document.getElementById("countdown").innerHTML = "Finally";
+            }
+        }
+
+        // Aktualizuj odpočet každou sekundu
+        const interval = setInterval(updateCountdown, 1000);
+
+        // Funkce pro generování kalendáře s přeškrtnutými dny
+        function generateCalendar() {
+            const now = new Date();
+            const month = now.getMonth(); // Měsíc (0-11)
+            const year = now.getFullYear(); // Rok
+            const firstDay = new Date(year, month, 1).getDay(); // První den měsíce
+            const daysInMonth = new Date(year, month + 1, 0).getDate(); // Počet dní v měsíci
+
+            let calendarHTML = "<table><thead><tr>";
+            const daysOfWeek = ["Ned", "Pon", "Úte", "Stř", "Čtv", "Pát", "Sob"];
+            for (let i = 0; i < daysOfWeek.length; i++) {
+                calendarHTML += `<th>${daysOfWeek[i]}</th>`;
+            }
+            calendarHTML += "</tr></thead><tbody><tr>";
+
+            // Přidej prázdné buňky na začátek měsíce (pokud první den není neděle)
+            for (let i = 0; i < firstDay; i++) {
+                calendarHTML += "<td></td>";
+            }
+
+            // Přidej dny měsíce s kontrolou, zda už jsou za námi
+            for (let day = 1; day <= daysInMonth; day++) {
+                const currentDate = new Date(year, month, day);
+                const today = new Date();
+                const isPast = currentDate < today; // Pokud je den v minulosti
+
+                // Přeškrtni uběhlé dny
+                if ((firstDay + day - 1) % 7 === 0 && day !== 1) {
+                    calendarHTML += "</tr><tr>"; // Přejít na nový řádek
+                }
+
+                // Přidání třídy 'crossed' pro uběhlé dny
+                if (isPast) {
+                    calendarHTML += `<td class="crossed">${day}</td>`;
+                } else {
+                    calendarHTML += `<td>${day}</td>`;
+                }
+            }
+
+            calendarHTML += "</tr></tbody></table>";
+            document.getElementById("calendar").innerHTML = calendarHTML;
+        }
+
+        // Funkce pro zobrazení aktuálního data, roku, hodin a minut
+        function updateCurrentDate() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = now.getMonth() + 1; // Měsíc (1-12)
+            const day = now.getDate();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
+
+            // Formátování času a data
+            const formattedDate = `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;
+            document.getElementById("currentDate").innerHTML = `Aktuální datum a čas: ${formattedDate}`;
+        }
+
+        // Funkce pro uložení poznámky
+        // Funkce pro uložení poznámky
+function saveNote() {
+    const now = new Date();
+    const currentDate = now.toISOString().split("T")[0];
+    const noteInput = document.getElementById("noteInput").value;
+    const time = `${now.getHours()}:${now.getMinutes()}`;
+
+    // Pokud uživatel zadá 'clear', vyčistí všechny poznámky
+    if (noteInput.toLowerCase() === 'clear') {
+        localStorage.clear();
+        alert("Všechny poznámky byly vymazány!");
+        displayNoteHistory(); // Aktualizace historie po vymazání
+        return;
+    }
+
+    // Získání poznámek z localStorage nebo prázdného pole, pokud žádné nejsou
+    let notes = JSON.parse(localStorage.getItem("notes"));
+    if (!Array.isArray(notes)) {
+        notes = []; // Pokud nejsou poznámky nebo jsou v nesprávném formátu, vytvoříme nové pole
+    }
+
+    // Přidání nové poznámky do seznamu
+    notes.push({
+        date: currentDate,
+        text: noteInput,
+        time: time
+    });
+
+    // Uložení aktualizovaného seznamu poznámek zpět do localStorage
+    localStorage.setItem("notes", JSON.stringify(notes));
+
+    // Aktualizuj historii poznámek
+    displayNoteHistory();
+}
+
+// Funkce pro zobrazení historie poznámek
+function displayNoteHistory() {
+    const notes = JSON.parse(localStorage.getItem("notes")) || [];
+    const noteHistoryDiv = document.getElementById("noteHistory");
+    noteHistoryDiv.innerHTML = ""; // Vyprázdní seznam před zobrazením
+
+    // Zobrazení každé poznámky
+    notes.forEach(note => {
+        const noteItem = document.createElement("div");
+        noteItem.classList.add("note-item");
+        noteItem.innerHTML = `<strong>${note.date}</strong> ${note.time}: ${note.text}`;
+        noteHistoryDiv.appendChild(noteItem);
+    });
+}
+
+
+        // Zavolej funkce
+        generateCalendar();
+        updateCurrentDate();
+        setInterval(updateCurrentDate, 1000);
+        displayNoteHistory();
+    </script>
+</body>
+</html>
